@@ -5,8 +5,84 @@
       <ion-menu-button menu="main-menu"></ion-menu-button>
     </ion-buttons>
   </ion-toolbar>
+  <style>
+    table {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      max-width: 100%;
+      margin: 0 auto;
+    }
+    
+    td, th {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+    
+    tr:nth-child(even) {
+      background-color: #dddddd;
+    }
+
+    thead {
+
+    background-color: #4C80AC;
+    color: white;
+    }
+    </style>
 </ion-header>
 
 <ion-content [fullscreen]="true">
+<!-- <span style="color: goldenrod;">No Assignments yet</span> -->
 
+<ion-scroll scrollX="true" style="width:100vw; height:50px" >
+  <ion-row nowrap class="headerChip">
+
+<!-- <div class="horizontal-scroll" *ngIf="assignmentData; else elseBlock"> -->
+<div *ngIf="assignmentData; else elseBlock">
+
+  <table >
+		<thead>
+			<tr>
+				<th>Sr No.</th>
+				<th>Assignment Details</th>
+      </tr>
+		</thead>
+
+    <tr *ngFor="let a of assignmentData">
+      <td class="text-align-center">{{a.id}}</td>
+      <td>
+        <div><b>Program Module: </b>{{a.name}}</div>
+        <div><b>Absent Date: </b>{{a.absent_date}}</div>
+        <div><b>Module Day: </b>{{a.module_day}}</div>
+        <br/>
+        <div ><b>Assignment URL: </b>
+          <ion-text class="highlighted-text" style="color: blue;" (click)="openUrl(a.assignment_url)">View Assignment</ion-text>
+        </div>
+          <br>
+        <div><b>Assignment Status: </b>{{a.assignment_status}}</div>
+        <div><b>Submitted File: </b>{{a.submitted_file}}</div>
+        <div><b>Submitted Date: </b>{{a.submission_date}}</div>
+        <div><b>Due Date: </b>{{a.due_date}}</div>
+        <div><b>Status: </b>{{a.status}}</div>
+        <div><b>Created At: </b>{{a.created_at}}</div>
+        <div class="btn-center"> <br>
+          <ion-button (click)="openUrl(a.assignment_url)">Submit</ion-button>
+        </div>
+
+      </td>
+
+    </tr>
+  </table>  
+</div>
+<ng-template #elseBlock>No assignments assigned</ng-template>
+
+<!-- Pagination exactly like Marksheet, but commenting as of now.
+<div class="divPageIndex">
+  <ion-button class="bottom-button" (click)="prevBtnClicked()" type="submit" expand="small">Prev </ion-button>
+    &nbsp;&nbsp;&nbsp;<span>Page {{pageIndex}}</span>&nbsp;&nbsp;&nbsp;
+    <ion-button class="bottom-button" (click)="nextBtnClicked()" type="submit" expand="small">Next </ion-button>
+</div> -->
+
+</ion-row>
+</ion-scroll>
 </ion-content>

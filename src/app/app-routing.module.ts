@@ -47,6 +47,10 @@ const routes: Routes = [
     path: 'marksheet',
     loadChildren: () => import('./marksheet/marksheet.module').then( m => m.MarksheetPageModule)
   },
+  {
+    path: 'referral',
+    loadChildren: () => import('./referral/referral.module').then( m => m.ReferralPageModule)
+  },
 ];
 
 @NgModule({

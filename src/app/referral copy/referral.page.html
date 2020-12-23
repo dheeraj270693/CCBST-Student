@@ -1,0 +1,22 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Referral</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button menu="main-menu"></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-input id='first_name' class="textfield" placeholder="Enter First Name" autocapitalize="On" aria-required="textfield"></ion-input>
+  <ion-input id="last_name" class="textfield" placeholder="Enter Last Name" autocapitalize="=On"></ion-input>
+  <ion-input id="email" class="textfield" placeholder="Enter Email Address" autocapitalize="=Off" inputmode="email"></ion-input>
+  <ion-input id="phone_no" class="textfield" maxlength="10" placeholder="Enter phone number" type="tel" value="" inputmode="tel"></ion-input>
+  <ion-textarea id="description" class="textfield" placeholder="Enter Description" ></ion-textarea>
+
+
+  <div class="bottom-button">
+    <ion-button expand="block" (click)="submitBtnClicked()">Submit</ion-button>
+  </div>
+</ion-content>

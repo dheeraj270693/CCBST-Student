@@ -1,26 +1,33 @@
-<!-- <ion-header>
-  <ion-toolbar>
+<!-- <ion-header > -->
+  <!-- <ion-toolbar>
     <ion-title>login</ion-title> 
-  </ion-toolbar>
-</ion-header> -->
+  </ion-toolbar> -->
+<!-- </ion-header> -->
 
-<ion-content>
+<!-- <ion-content class="bgColor"> -->
+  <div class="fullScreen">
+  <ion-content class="setBgColor" >
+    <img src="../../assets/icon/ccbstlogo.png" class="setImageOnTop"/>
+
   <ion-card class="cardCSS">
+
     <ion-card-content>
-        <strong>SignIn</strong>
-  
-        <ion-item>
+        <strong class='login-title'>Sign In</strong>
+        <div class="coverSpace"></div>
+        <!-- <ion-item>
           <ion-label position="floating">Email</ion-label>
           <ion-input></ion-input>
+        </ion-item> -->
+        <ion-item class="setBgColor">
+          <!-- <ion-label position="floating">Password</ion-label> -->
+          <ion-input id="passwordText" type="password" placeholder="Password"></ion-input>
         </ion-item>
-        <ion-item>
-          <ion-label position="floating">Password</ion-label>
-          <ion-input type="password"></ion-input>
-        </ion-item>
-  
-        <ion-button class="setButton" color="secondary" (click)="loginBtnClicked()">Login</ion-button>
+        <div class="coverSpace"></div>
+
+        <ion-button class="setButton" color="#38B4BF" (click)="loginBtnClicked()">LOGIN</ion-button>
    
     </ion-card-content>  
   </ion-card>
   
 </ion-content>
+</div>

@@ -1,0 +1,93 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Assignment</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button menu="main-menu"></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+  <style>
+    table {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      max-width: 100%;
+      margin: 0 auto;
+    }
+    
+    td, th {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+    
+    tr:nth-child(even) {
+      background-color: #dddddd;
+    }
+
+    thead {
+
+    background-color: #4C80AC;
+    color: white;
+    }
+    </style>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+<!-- <span style="color: goldenrod;">No Assignments yet</span> -->
+
+<ion-scroll scrollX="true" style="width:100vw; height:50px" >
+  <ion-row nowrap class="headerChip">
+
+<div class="horizontal-scroll" *ngIf="assignmentData; else elseBlock">
+
+  <table >
+		<thead>
+			<tr>
+				<th>Sr No.</th>
+				<th>Program Module</th>
+        <th>Absent Date</th>
+        <th>Module Day</th>
+				<th>Assignment URL</th>
+        <th>Assignment Status</th>
+        <th>Submitted File</th>
+				<th>Submitted Date</th>
+        <th>Due Date</th>
+        <th>Status</th>
+				<th>Created At</th>
+				<th>Action</th>
+			</tr>
+		</thead>
+
+    <tr *ngFor="let a of assignmentData">
+      <td class="text-align-center">{{a.id}}</td>
+      <td>{{a.name}}</td>
+      <td class="text-align-center">{{a.absent_date}}</td>
+      <td class="text-align-center">{{a.module_day}}</td>
+      <td class="text-align-center" class="highlighted-text" >
+        <ion-text style="color: blue;" (click)="openUrl(a.assignment_url)">View Assignment</ion-text>
+      </td>
+      <td class="text-align-center">{{a.assignment_status}}</td>
+      <td class="text-align-center">{{a.submitted_file}}</td>
+      <td class="text-align-center">{{a.submission_date}}</td>
+      <td class="text-align-center">{{a.due_date}}</td>
+      <td class="text-align-center; active-text">{{a.status}}</td>
+      <td class="text-align-center">{{a.created_at}}</td>
+
+      <!-- <td *ngIf="submitBtn; else submittedBtn" #submitBtn> style="height: max-content;" -->
+        <td>
+        <ion-button (click)="openUrl(a.assignment_url)">Submit</ion-button>
+        <!-- <ion-button >Submit</ion-button> -->
+        <!-- <ion-button href="a.assignment_url">Submit</ion-button> -->
+
+      </td> 
+      <!-- <td #submittedBtn>
+        <ion-button >Submitted</ion-button>
+      </td>  -->
+
+    </tr>
+  </table>  
+</div>
+<ng-template #elseBlock>No assignments assigned</ng-template>
+
+</ion-row>
+</ion-scroll>
+</ion-content>

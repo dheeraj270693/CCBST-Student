@@ -1,17 +1,45 @@
 
+.login-title {
+    color: #38B4BF;
+    font-size: x-large;
+    font-weight: 400;
+
+    // padding-left: 20px;
+}
+
 .cardCSS{
-    top: 25%;
-    width: 75%;
+    top: 16%;
+    width: 80%;
     margin-left: auto;
     margin-right: auto;
+    background-color: #848484;
 }
 
 .setButton {
     border-radius: 0px;
-    margin-left: 18px;
+    // margin-left: 18px;
     margin-top: 10px;
     font-size: large;
-
     background-color: #28A1AE;
 
+}
+
+.coverSpace {
+    height: 26px;
+}
+
+.fullScreen {
+    height: 100%;
+}
+
+.setImageOnTop {
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 5%;
+}
+
+ion-content {
+    --background: none;
+    background-color: #666666 !important;    
 }

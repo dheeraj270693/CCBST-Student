@@ -1,0 +1,33 @@
+.horizontal-scroll {
+    // overflow: auto;
+    // white-space: nowrap;
+}
+
+.highlighted-text {
+    color: blue($color: #000000);
+    text-decoration: underline;
+    // text-decoration-color: blue;
+}
+
+.text-align-center {
+    text-align: center;
+}
+
+.active-text {
+    // background-color: #3880ff;
+    color: #3880ff;
+}
+
+.btn-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.divPageIndex {
+    max-width: 80%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

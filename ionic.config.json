@@ -1,7 +1,13 @@
 {
   "name": "blankProject",
+  "v2": true,
+  "typescript": true,
   "integrations": {
     "cordova": {}
   },
+  "proxies": [{
+    "path": "/api",
+    "proxyUrl": "https://ccbst.org/CCBST-LIVE"
+}],
   "type": "angular"
 }

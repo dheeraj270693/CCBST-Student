@@ -5,8 +5,68 @@
       <ion-menu-button menu="main-menu"></ion-menu-button>
     </ion-buttons>
   </ion-toolbar>
+  <style>
+    table {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      max-width: 90%;
+      margin: 8% auto;
+    }
+    
+    td, th {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+    
+    tr:nth-child(even) {
+      background-color: #dddddd;
+    }
+
+    thead {
+
+    background-color: #4C80AC;
+    color: white;
+    }
+    </style>
+  
 </ion-header>
 
 <ion-content [fullscreen]="true">
+<!-- <ion-list>
+  <ion-item *ngFor="let data of (marksheetData | async)">
+    {{data.name}}
+  </ion-item>
+</ion-list> -->
+
+  <div *ngIf="marksheetData; else elseBlock">
+
+  <table >
+		<thead>
+			<tr>
+				<th>Sr No.</th>
+				<th>Module Name</th>
+				<th>Marks</th>
+			</tr>
+		</thead>
+
+    <tr *ngFor="let m of marksheetData">
+      <td>{{m.num}}</td>
+      <td>{{m.name}}</td>
+      <td>{{m.total_marks}}</td>
+    </tr>
+    <!-- <tr>
+      <td>2.</td>
+      <td>Francisco Chang</td>
+      <td>Mexico</td>
+    </tr>  -->
+  </table>  
+  </div>
+  <ng-template #elseBlock>No record found</ng-template>
+  <div class="divPageIndex">
+    <ion-button class="bottom-button" (click)="prevBtnClicked()" type="submit" expand="small">Prev </ion-button>
+      &nbsp;&nbsp;&nbsp;<span>Page {{pageIndex}}</span>&nbsp;&nbsp;&nbsp;
+      <ion-button class="bottom-button" (click)="nextBtnClicked()" type="submit" expand="small">Next </ion-button>
+  </div>
 
 </ion-content>

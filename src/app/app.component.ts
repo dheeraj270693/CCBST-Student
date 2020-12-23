@@ -36,7 +36,8 @@ export class AppComponent {
   signOut(){
     console.log("Signed out successfully.");
     this.storage.set('isLogin', false);
+    this.storage.set('AUTH_TOKEN', "");
     this.router.navigate(['/', 'login']);
 
-  }
+  } 
 }
